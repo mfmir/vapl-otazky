@@ -70,7 +70,11 @@ $ overline(a) in D &arrow.l.r.double&& cA models phi[e(overline(x)\/overline(a),
 &arrow.l.r.double&& h(overline(a)) in D
 $
 
-== (L6) [TODO] Tablo metoda v jazyce s rovností
+== (L6) Tablo metoda v jazyce s rovností
+
+Pro teorii $T$ v jazyce $L$ s rovností: $T* =$ rozšíření o generální uzávěry axiomů rovnosti (viz P7) pro jazyk $L$, tablo důkaz z teorie $T$ je tablo důkaz z teorie $T*$.
+
+Při získávání kanonického modelu nejdříve najdeme model $cB$ a přidáme relaci $scripts(=)^B$: $\"s_1\" scripts(=)^B \"s_2\" <=>$ na větvi $V$ je položka T$s_1 = s_2$. Kanonický model pak získáme jako faktorstrukturu $cB slash_(scripts(=)^B)$. Kanonický model pak může být i konečný.
 
 == (L7) Věta o kompaktnosti a její aplikace <L7>
 
