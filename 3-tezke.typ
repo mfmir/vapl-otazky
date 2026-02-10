@@ -135,15 +135,14 @@ idk asi (L7)
 
 == (T13) Věta o konečné axiomatizovatelnosti
 
-Mějme třídu struktur $K subs M_L$ a uvážíme její doplněk $overline(K) = M_L \\ K$. Potom $K$ je konečně axiomatizovatelné, právě tehdy, když $K$ i $overline(K)$ jsou axiomatizovatelné.
+Mějme třídu struktur $K subs M_L$ a uvážíme její doplněk $overline(K) = M_L \\ K$. Potom $K$ je konečně axiomatizovatelné právě tehdy, když $K$ i $overline(K)$ jsou axiomatizovatelné.
 
 _Důkaz:_ Je-li $K$ konečně axiomatizovatelná, pak je axiomatizovatelná i konečně mnoha sentencemi $phi_1, dots, phi_n$. K axiomatizaci $overline(K)$ nám postačí $psi = not(phi_1 and dots and phi_n), M(psi) = overline(K)$.
 
-Nechť jsou teorie $T, S$ takové, že $M(T) = K$ a $M(S) = overline(K)$. Uvažme teorii $T union S$; ta je sporná, neboť:
-
-$ M(T union S) = M(T) inter M(S) = K inter overline(K) = emptyset $
-
-Podle věty o kompaktnosti (L7) existují 
+Nechť jsou teorie $T, S$ takové, že $M(T) = K$ a $M(S) = overline(K)$. Uvažme teorii $T union S$; ta je sporná, neboť: $ M(T union S) = M(T) inter M(S) = K inter overline(K) = emptyset $
+Podle věty o kompaktnosti (L7) existují konečné podteorie $T' subs T$ a $S' subs S$ takové, že $ M(T' union S') = M(T') inter M(S') = emptyset $
+Nutně ale $ M(T) subs M(T') subs overline(M(S')) subs overline(M(S)) = M(T) $
+Tedy $M(T) = M(T')$, tedy $T'$ je hledaná konečná axiomatizace $K$.
 
 == (T14) Rekurzivně axiomatizovaná teorie s rekurzivně spočetnou kompletací je rozhodnutelná
 
