@@ -78,19 +78,18 @@ Při získávání kanonického modelu nejdříve najdeme model $cB$ a přidáme
 
 == (L7) Věta o kompaktnosti a její aplikace <L7>
 
-_Věta o kompaktnosti:_ Teorie má model, právě tehdy, když každá její konečná část má model.
+_Věta o kompaktnosti:_ Teorie má model $<=>$ každá její konečná část má model.
 
-_Důkaz_: Model teorie je modelem každé její části. Pokud $T$ nemá model, je sporná, tedy $T tack fal$. Vezměme nějaký její _konečný_ tablo důkaz $fal "z" T$. K jeho konstrukci stačí konečně mnoho $alpha in T$, ty tvoří konečnou podteorii $T'$, která nemá model. $qed$
+_Důkaz_: Model teorie je modelem každé její části. Pokud $T$ nemá model, je sporná, tedy $T tack fal$. Vezměme nějaký její _konečný_ tablo důkaz $fal "z" T$. K jeho konstrukci stačí konečně mnoho $alpha in T$, ty tvoří konečnou podteorii $T'$, která nemá model.
 
-Důsledek: Teorie konečných grafů není axiomatizovatelná: Mějme $T$ a její modely, všechny konečné grafy.
-1. Vytvoříme $T^*$. Přidáme do ní _nekonečně mnoho_ nových axiomů říkajících, že:\
- $exists x_1$ (existuje alespoň jeden prvek)\
- $exists x_1, x_2: x_1 neq x_2$ (existují alespoň dva prvky)\
- $dots$
-2. Každá konečná podmnožina $T^*$ má model. Řekněme, že největší axiom vybrán v něm je $exists x_1, dots, x_n$. Konečný graf s $n$ vrcholy toto určitě splňuje.
-3. Podle věty o kompaktnosti má celá rozšířená teorie $T^*$ model. Ale tento model musí splňovat všechny přidané axiomy, tedy obsahovat nekonečně mnoho prvků - je to nekonečný graf. Zároveň ale musí být modelem původní teorie T, tedy konečným grafem. Spor!
+Důsledek 1: Spočetně nekonečný graf je bipartitní $<=>$ každý jeho konečný podgraf je bipartitní. Sestrojíme teorii $T = {p_u eqviv not p_v | {u, v} in E(G)}$, kde $p_u$ značí "vrchol $u$ je v partitě $A$". Konečná podmnožina $T$ bude mluvit o bipartitnosti indukovaného konečného podgrafu. Podle věty o kompaktnosti, pokud budou všechny takové podmnožiny mít model (tedy takový podgraf bude bipartitní), bude i celá $T$ mít model (tedy takový graf bude bipartitní).
 
-Taky (T13).
+Důsledek 2: Teorie konečných grafů není axiomatizovatelná: Mějme $T$ a její modely, tedy všechny konečné grafy.
+1. Vytvoříme $T^*$ přidáním _nekonečně mnoha_ nových axiomů říkajících, že "existuje alespoň $n$ vrcholů" (pro každé $n in NN$)
+2. Každá konečná podmnožina $T^*$ má model. Řekněme, že největší axiom vybrán v něm je "existuje $k$ vrcholů". Konečný graf s $k$ vrcholy toto určitě splňuje.
+3. Podle věty o kompaktnosti má celá rozšířená teorie $T^*$ model. Ale tento model musí splňovat všechny přidané axiomy, tedy obsahovat nekonečně mnoho prvků - je to _nekonečný_ graf. Zároveň ale musí být modelem původní teorie T, tedy _konečným_ grafem. Spor!
+
+Taky T13.
 
 == (L8) Korektnost rezoluce ve výrokové logice
 
