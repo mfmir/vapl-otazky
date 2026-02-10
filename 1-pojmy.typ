@@ -309,7 +309,6 @@ Mějme formuli $phi(overline(x), overline(y))$, kde $|overline(x)|=n, |overline(
 Např. pro $phi(x, y) = E(x, y)$ je $phi^(cal(G), v)(x,y)$ množina všech sousedů $v$.
 
 == (P16) Extenze o definice
-// TODO relace, konstanta; definici basic extenzemožná lze přesunout jinam
 
 _Extenze o definice_ je druh konzervativní extenze, která do jazyka přidává nové funkční/relační/konstantní symboly a dává jim definici pomocí formule v původním jazyce.
 
