@@ -52,6 +52,7 @@ Teorie $T$ je:
 
 
 == (P5) Extenze teorie, odpovídající sémantická kritéria
+// TODO predikátová logika & FmL meme
 
 Důsledek teorie $T$ je každý výrok, který v $T$ platí: $CsqP(T) = {phi in VFP | T models phi}$. Pokud je $T$ teorie v jazyce $PP$, můžeme psát $CsqP(T) = {phi in VFP | MP(T) subs MP(phi)}$. Důsledky:
 - $T subs CsqP(T)$
@@ -308,23 +309,19 @@ Mějme formuli $phi(overline(x), overline(y))$, kde $|overline(x)|=n, |overline(
 Např. pro $phi(x, y) = E(x, y)$ je $phi^(cal(G), v)(x,y)$ množina všech sousedů $v$.
 
 == (P16) Extenze o definice
+// TODO relace, konstanta; definici basic extenzemožná lze přesunout jinam
 
-Pojem _extenze_ je definován stejně jako ve výrokové logice.
-- _Extenze_ teorie $T$ je libovolná $T'$ v jazyce $L' supset.eq L$ splňující $CsqL(T) subs "Csq"_L' (T')$
-- Je to _jednoduchá_ extenze, pokud $L' = L$
-- Je to _konzervativní extenze_, pokud $CsqL(T) = "Csq"_L' (T') = "Csq"_L' (T') inter "Fm"_L$#footnote[fr] kde $"Fm"_L$ značí možinu všech výrokových formulí jazyka $L$
-- Teorie $T$ je ekvivalentní s $T'$, pokud jsou si navzájem extenzí
+_Extenze o definice_ je druh konzervativní extenze, která do jazyka přidává nové funkční/relační/konstantní symboly a dává jim definici pomocí formule v původním jazyce.
 
-Z toho vyplyne:
-- $T'$ je extenze $T$ kdyžž $M_L (T') subs M_L (T)$
-- $T'$ je ekvivalentní s $T$ kdyžž $M_L (T') = M_L (T)$
+Relační symbol se definuje jednoduše jako $R(x_1, ..., x_n) eqviv psi(x_1, ..., x_n)$.
 
-_Extenze o definice_ je speciální druh konzervativní extenze, která definuje nové symboly.
+Funkční symbol jako rovnost s výstupní hodnotou: $f(x_1, ..., x_n) = y eqviv psi(x_1, ..., x_n, y)$, navíc musí platit
+- axiom existence (alespoň jedna výstupní hodnota): $(exists y) psi(x_1, ..., x_n, y)$,
+- axiom jednoznačnosti (max jedna výstupní hodnota): $psi(x_1, ..., x_n, y) and psi(x_1, ..., x_n, z) impl y = z$.
 
-Mějme teorii $T$ a formuli $psi(x_1,dots,x_n,y)$ v jazyce $L$. Označme $L'$ jako rozšíření jazyka $L$ o nový $n$-ární funkční symbol $f$. Nechť v teorii $T$ platí:
-- _axiom existence_ $(exists y)psi(x_1,dots,x_n,y)$
-- _axiom jednoznačnosti_ $psi(x_1,dots,x_n,y) and psi(x_1,dots,x_n,z) impl y=z$
-Potom _extenze teorie $T$ o definici f formulí $psi$_ je $L'$-teorie: $ T' = T union {f(x_1,dots,x_n) = y eqviv psi(x_1,dots,x_n,y)} $
+Konstantní symbol je funkční symbol bez vstupních parametrů, tedy musí splňovat dva axiomy $(exists y) psi(y)$ a $psi(y) and psi(z) impl y = z$ a je definován $y = c eqviv psi(y)$. Např. v aritmetice lze definovat symbol $1$ jako $y = 1 eqviv y = S(0)$, tedy v každém modelu bude muset symbol $1$ být interpretován jako následník nuly.
+
+
 
 Například v teorii grup můžeme zavést _binární_ funkční symbol $minus_b$ pomocí $+$ a unárního $-$ takto: $ x_1 minus_b x_2 = y eqviv x_1 + (-x_2) = y $
 

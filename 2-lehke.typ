@@ -41,7 +41,19 @@ Nyní algoritmus:
 
 \*To funguje díky "hornovskosti" výroku. Pokud ve výroku není jednotkový literál, pak každá klauzule obsahuje alespoň dva literály a nejvýše jeden z nich může být pozitivní. Když tedy nastavíme všechny zbývající literály na 0, určitě tím splníme všechny klauzule.
 
-== (L4) [TODO] Vlastnosti extenze o definice
+== (L4) Vlastnosti extenze o definice
+
+Pro teorii $T$ a její extenzi o definice $T'$ (viz P16):
+- Každý model $T$ lze jednoznačně expandovat#footnote[Viz P14. Nevím co znamená jednoznačně.] na model $T'$
+- $T'$ je konzervativní extenze $T$
+- Pro každou $L'$-formuli $phi'$ existuje $L$-formule $phi$: $T' models phi' eqviv phi$
+
+Lze expandovat, protože do modelu přidáme nový symbol a jeho interpretaci tak, jak je definována.
+
+Konzervativní, protože nové symboly lze nahradit jejich definicí a v původním jazyce tak dostaneme stejné důsledky.
+
+Formule v původním jazyce existuje ze stejného důvodu. Je třeba dát pozor na navázání volných proměnných.#footnote[Tbh tady hodně haluzim, ty skripta to moc nevysvětlujou.]
+
 
 == (L5) Vztah definovatelných množin a automorfismů
 
