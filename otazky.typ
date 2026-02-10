@@ -2,7 +2,7 @@
 #set text(lang: "cs")
 
 #outline(
-  title: [Seznam otázek]
+  title: [Seznam otázek -- leden 2026]
 )
 
 #pagebreak()
