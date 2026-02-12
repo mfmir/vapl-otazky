@@ -24,22 +24,19 @@ Podobně pro 2-klauzule. Pokud mám $cl_1 or cl_2$, tak v $G_phi$ je $cln_1 impl
 
 == (L3) Horn-SAT, Algoritmus jednotkové propagace, jeho korektnost
 
-Viz (P8) co to je Horn-SAT. _Jednotková propagace:_ pokud náš výrok obsahuje jednotkovou klauzuli, víme, jak musí být ohodnocena výroková proměnná v této klauzuli -- tuto znalost můžeme propagovat, využít k zjednodušení výroku:
-- každá výroková proměnná obsahující pozitivní literál je splněna a můžeme ji z výroku odstranit
-- negativní literál nemůže být splněn, můžeme ho tedy odebrat ze všech klauzulí, které ho obsahují.
+Viz (P8) co to je Horn-SAT. _Jednotková propagace:_ pokud náš výrok obsahuje jednotkovou klauzuli ${cl}$, víme, jak musí být ohodnocena výroková proměnná v této klauzuli -- tuto znalost můžeme propagovat, využít k zjednodušení výroku:
+- všechny klauzule obsahující literál $cl$ musí být splněné, tedy je z výroku odstraníme
+- všechny výskyty literálu $overline(cl)$ nemohou být splněné, tedy je z klauzulí odstraníme
 
-Výsledkem je zjednodušený výrok označený $phi^cl$ pro jednotkovou klauzuli (literál) $cl$ co jsme odstranili. Všimněme si, že $phi^cl$ neobsahuje $cl$, ani $cln$ a zřejmě platí, že modely $phi$ jsou právě modely ${phi^cl, cl}$, neboli modely $phi^cl$ v původním jazyce $PP$, ve kterých platí $cl$.
+Výsledkem je zjednodušený výrok označený $phi^cl$. Všimněme si, že $phi^cl$ neobsahuje $cl$, ani $cln$ a zřejmě platí, že modely $phi$ jsou právě modely ${phi^cl, cl}$, neboli modely $phi^cl$ v původním jazyce $PP$, ve kterých platí $cl$.
 
-Nyní algoritmus:
-
-`IN`: $phi$ v Horn-SAT. `OUT`: Model, nebo informace, že neexistuje
-
+Algoritmus Horn-SAT: Vstup: $phi$ ve tvaru Horn-SAT. Výstup: model, nebo informace, že neexistuje
 1. Pokud $phi$ obsahuje (jednotkové klauzule) $cl "i" cln$, pak není splnitelný
-2. Pokud $phi$ neobsahuje jednotkovou klauzuli, ohodnoť všechny zbývající proměnné 0 (konec)\*
-3. Pokud $phi$ obsahuje jednotkovou klauzuli $cl$, ohodnoť $cl = 1$, proveď _jednotkovou propagaci_, nahraď $phi$ výrokem $phi^cl$
-4. Opakuj
+2. Pokud $phi$ neobsahuje jednotkovou klauzuli, ohodnoť všechny zbývající proměnné 0, skonči#footnote[To funguje díky "hornovskosti" výroku. Pokud ve výroku není jednotkový literál, pak každá klauzule obsahuje alespoň dva literály a nejvýše jeden z nich může být pozitivní. Když tedy nastavíme všechny zbývající literály na 0, určitě tím splníme všechny klauzule.]
+3. Pokud $phi$ obsahuje jednotkovou klauzuli $cl$, ohodnoť $cl = 1$, _jednotkovou propagací_ získej výrok $phi^cl$
+4. Opakuj se vstupem $phi^cl$
 
-\*To funguje díky "hornovskosti" výroku. Pokud ve výroku není jednotkový literál, pak každá klauzule obsahuje alespoň dva literály a nejvýše jeden z nich může být pozitivní. Když tedy nastavíme všechny zbývající literály na 0, určitě tím splníme všechny klauzule.
+
 
 == (L4) Vlastnosti extenze o definice
 
@@ -72,9 +69,9 @@ $
 
 == (L6) Tablo metoda v jazyce s rovností
 
-Pro teorii $T$ v jazyce $L$ s rovností: $T* =$ rozšíření o generální uzávěry axiomů rovnosti (viz P7) pro jazyk $L$, tablo důkaz z teorie $T$ je tablo důkaz z teorie $T*$.
+Pro teorii $T$ v jazyce $L$ s rovností: $T^* =$ rozšíření o generální uzávěry axiomů rovnosti (viz P7) pro jazyk $L$, tablo důkaz z teorie $T$ je tablo důkaz z teorie $T^*$.
 
-Při získávání kanonického modelu nejdříve najdeme model $cB$ a přidáme relaci $scripts(=)^B$: $\"s_1\" scripts(=)^B \"s_2\" <=>$ na větvi $V$ je položka T$s_1 = s_2$. Kanonický model pak získáme jako faktorstrukturu $cB slash_(scripts(=)^B)$. Kanonický model pak může být i konečný.
+Při získávání kanonického modelu nejdříve najdeme model $cB$ a přidáme relaci $scripts(=)^B$: $\"s_1\" scripts(=)^B \"s_2\" <=>$#footnote[To jsou ale hnusný uvozovky.] na větvi $V$ je položka T$s_1 = s_2$. Kanonický model pak získáme jako faktorstrukturu $cB slash_(scripts(=)^B)$. Kanonický model pak může být i konečný.
 
 == (L7) Věta o kompaktnosti a její aplikace <L7>
 
@@ -106,7 +103,7 @@ _Důkaz_: Nechť $S scripts(tack)_R square$ a důkaz $C_0, C_1, dots, C_n = squa
 
 Mějme $C_1, C_2$ a jejich rezolventu $C$. Platí-li ve struktuře $cA$ klauzule $C_1, C_2$, platí v ní i $C$.
 
-_Důkaz:_ Z rezolučního pravidla víme $C = C'_1 sigma union C'_2 sigma$, kde $sigma$ je nejobecnější unifikace množiny výrazů $S = {A_1, dots, A_n, B_1, dots, B_n}$, neboli $S sigma = {A_1 sigma}$. Protože $C_1, C_2$ jsou otevřené formule platné v $cA$, platí v $cA$ i jejich instance po substituci $sigma$, tj. $cA models C_1 sigma$ a $cA models C_2 sigma$. Víme také $C_1 sigma = C'_1 sigma union {A_1 sigma}$ a podobně $C_2 sigma = C'_2 sigma union {not A_1 sigma}$. // wtf?
+_Důkaz:_ Z rezolučního pravidla (viz P9) víme $C = C'_1 sigma union C'_2 sigma$, kde $sigma$ je nejobecnější unifikace množiny výrazů $S = {A_1, dots, A_n, B_1, dots, B_n}$, neboli $S sigma = {A_1 sigma}$. Protože $C_1, C_2$ jsou otevřené formule platné v $cA$, platí v $cA$ i jejich instance po substituci $sigma$, tj. $cA models C_1 sigma$ a $cA models C_2 sigma$. Víme také $C_1 sigma = C'_1 sigma union {A_1 sigma}$ a podobně $C_2 sigma = C'_2 sigma union {not A_1 sigma}$. // wtf?
 
 Chceme ukázat $cA models C[e]$ pro libovolné ohodnocení $e$. Pokud $cA models A_1 sigma[e]$, potom $cA tack.r.double.not not A_1 sigma[e]$ a musí být $cA models C'_2 sigma[e]$. Tedy i $cA models C[e]$. V opačném případě $cA tack.r.double.not A_1 sigma[e] dots$ pak opět $cA models C[e]$.
 
@@ -114,13 +111,13 @@ Korektnost je stejná jako v (L8).
 
 == (L10) Nestandardní model přirozených čísel
 
-Nechť $underline(NN) = sl NN, S, +, dot, 0, <= sr$ je standardní model přirozených čísel. $Th(underline(NN))$ je množina všech sentencí pravdivých v $underline(NN)$. Pro $n in NN$ definujeme $n$-tý numerál jako term $n = S(S(dots (S(0)) dots))$. Vezměme nový konstantní symbol $c$ a vyjádřeme, že je ostře větší než každý $n$-tý numerál:#footnote[Znaménko $<$ přitom není v jazyce, takže nevím, jak jde tohle udělat? Idk takhle to je ve skriptech.] $ T = Th(underline(NN)) union {underline(n) < c | n in NN} $
+Nechť $underline(NN) = sl NN, S, +, dot, 0, <= sr$ je standardní model přirozených čísel. $Th(underline(NN))$ je množina všech sentencí pravdivých v $underline(NN)$. Pro $n in NN$ definujeme $n$-tý numerál jako term $underline(n) = S(S(dots (S(0)) dots))$. Vezměme nový konstantní symbol $c$ a vyjádřeme, že je ostře větší než každý $n$-tý numerál: $ T = Th(underline(NN)) union {underline(n) < c | n in NN} $
 
 Každá konečná část teorie $T$ má model. Z (L7) tedy plyne, že i $T$ má model.
 
 == (L11) Existence spočetného algebraicky uzavřeného tělesa
 
-$cA$ je algebraicky uzavřené, pokud každý polynom nenulového stupně v něm má kořen. Např. $RR$ není, protože $x^2 + 1 = 0$; $CC$ už je.
+$cA$ je algebraicky uzavřené, pokud každý polynom nenulového stupně v něm má kořen. Např. $RR$ není, protože $x^2 + 1 = 0$ nemá kořen; $CC$ už je.
 
 Algebraickou uzavřenost lze vyjádřit $psi_n$ pro každé $n > 0$:
 

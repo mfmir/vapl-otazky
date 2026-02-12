@@ -111,7 +111,7 @@ Důkaz tablem. Herbrandův model tvoříme podobně jako kanonický model, nejpr
 
 // TODO nějaký dva crazy důsledky
 
-== (T10) Löwenheim-Skolemova věta včetně varianty s rovností, jejich důsledky
+== (T10) [WIP] Löwenheim-Skolemova věta včetně varianty s rovností, jejich důsledky
 
 Pro spočetný jazyk bez rovnosti $L$: každá bezesporná teorie v jazyce $L$ má spočetně nekonečný model.
 

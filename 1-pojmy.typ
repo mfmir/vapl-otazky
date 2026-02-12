@@ -320,15 +320,13 @@ Funkční symbol jako rovnost s výstupní hodnotou: $f(x_1, ..., x_n) = y eqviv
 
 Konstantní symbol je funkční symbol bez vstupních parametrů, tedy musí splňovat dva axiomy $(exists y) psi(y)$ a $psi(y) and psi(z) impl y = z$ a je definován $y = c eqviv psi(y)$. Např. v aritmetice lze definovat symbol $1$ jako $y = 1 eqviv y = S(0)$, tedy v každém modelu bude muset symbol $1$ být interpretován jako následník nuly.
 
-
-
 Například v teorii grup můžeme zavést _binární_ funkční symbol $minus_b$ pomocí $+$ a unárního $-$ takto: $ x_1 minus_b x_2 = y eqviv x_1 + (-x_2) = y $
 
 == (P17) Prenexní normální forma, Skolemova varianta
 
 _Prenexní normální forma_ je "vytknutí kvantifikátorů", formule $phi$ je _PNF_, je-li tvaru $ (Q_1 x_1)dots(Q_n x_n)phi' $ kde $Q_i$ je kvantifikátor a formule $phi'$ je otevřená. $phi'$ pak říkáme _otevřené jádro_ a $(Q_1 x_1)dots(Q_n x_n)$ je _kvantifikátorový prefix_. Jsou-li všechny kvantifikátory v PNF formuli univerzální, je pak $phi$ _univerzální formule_.
 
-Mějme $L$-sentenci $phi$v PNF, a nechť všechny její vázané proměnné jsou různé. Nechť existenční kvantifikátory v prefixu $phi$ jsou $(exists y_1),dots,(exists y_n)$ v tomto pořadí, a nechť pro každé $i$ jsou $(forall x_1),dots,(forall x_n_i)$ právě všechny univerzální kvantifikátory předcházející kvantifikátoru $(exists y_i)$ v prefixu $phi$. Označme $L'$ rozšíření $L$ o nové $n_i$-ární funkční symboly $f_1,...,f_n$, kde symbol $f_i$ je arity $n_i$ pro každé $i$. _Skolemova varianta_ sentence $phi$ je $L'$ sentence $phi_S$ vzniklá z $phi$ tak, že pro každé $i= 1,dots,n$:
+Mějme $L$-sentenci $phi$ v PNF, a nechť všechny její vázané proměnné jsou různé. Nechť existenční kvantifikátory v prefixu $phi$ jsou $(exists y_1),dots,(exists y_n)$ v tomto pořadí, a nechť pro každé $i$ jsou $(forall x_1),dots,(forall x_n_i)$ právě všechny univerzální kvantifikátory předcházející kvantifikátoru $(exists y_i)$ v prefixu $phi$. Označme $L'$ rozšíření $L$ o nové $n_i$-ární funkční symboly $f_1,...,f_n$, kde symbol $f_i$ je arity $n_i$ pro každé $i$. _Skolemova varianta_ sentence $phi$ je $L'$-sentence $phi_S$ vzniklá z $phi$ tak, že pro každé $i= 1, ...,n$:
 - odstraníme z prefixu kvantifikátor $(exists y_i)$
 - substituujeme za proměnnou $y_i$ term $f_i (x_1,dots,x_n_i)$
 
@@ -337,14 +335,16 @@ Mějme $L$-sentenci $phi$v PNF, a nechť všechny její vázané proměnné jsou
 Neformálně řečeno, struktury jsou _izomorfní_, pokud se liší jen pojmenováním konkrétních prvků.
 
 Mějme struktury $cA,cB "jazyka" L = sig$. _Izomorfismus_ $cA "a" cB$ je bijekce $h: A arrow B$ splňující:
-- Pro každý (n-ární) funkční symbol $f in cF$ a pro všechna $a_i in A$ platí: $ h(f^cA (a_1,dots,a_n)) = f^cB (h(a_1),dots,h(a_n)) $
-- Pro každý (n-ární) relační symbol $R in cR$ a pro všechna $a_i in A$ platí: $ R^cA (a_1,dots,a_n) "právě když" R^cB (h(a_1),dots,h(a_n)) $
+- Pro každý ($n$-ární) funkční symbol $f in cF$ a pro všechna $a_i in A$ platí: $ h(f^cA (a_1,dots,a_n)) = f^cB (h(a_1),dots,h(a_n)) $
+- Pro každý ($n$-ární) relační symbol $R in cR$ a pro všechna $a_i in A$ platí: $ R^cA (a_1,dots,a_n) "právě když" R^cB (h(a_1),dots,h(a_n)) $
 
 Pokud existuje, říkáme, že $cA "a" cB$ jsou izomorfní, píšeme $cA tilde.eq cB$. Býti izomorfní je ekvivalence.
 
-_Izomorfní spektrum_ teorie $T$ je počet $I(kappa, T)$ modelů $T$ kardinality $kappa$ až na izomorfismus, pro každou kardinalitu $kappa$ (včetně transfinitních). Teorie $T$ je $kappa$-kategorická, pokud $I(kappa,T) = 1$.
+_Izomorfní spektrum_ teorie $T$ je počet $I(kappa, T)$ modelů $T$ kardinality $kappa$ až na izomorfismus, pro každou kardinalitu $kappa$ (včetně nekonečných). Teorie $T$ je $kappa$-kategorická, pokud $I(kappa,T) = 1$.
 
-Teď česky: $I(kappa,T)$ říká, "Kolik strukturně odlišných způsobů existuje, jak realizovat teorii T na množině (univerzu) velikosti κ?". Když je teorie $kappa$-kategorická, všechny modely jsou navzájem izomorfní, tedy "existuje jedno řešení", v kardinalitě $kappa$ má teorie "jedinečnou realizaci".
+Teď česky: $I(kappa,T)$ říká "kolik strukturně odlišných způsobů existuje, jak realizovat teorii $T$ na množině (univerzu) velikosti $kappa$?". Když je teorie $kappa$-kategorická, všechny modely jsou navzájem izomorfní, tedy "existuje jedno řešení", v kardinalitě $kappa$ má teorie "jedinečnou realizaci".
+
+Teorie $T$ je $omega$-kategorická $<=>$ $I(omega, T) = 1$ $<=>$ $T$ má pouze jeden#footnote[Až na izomorfismus.] spočetně nekonečný model.#footnote[$omega$ tady značí nejmenší nekonečné ordinální (řadové) číslo. Prostě nekonečno.]
 
 == (P19) Axiomatizovatelnost, konečná axiomatizovatelnost, otevřená axiomatizovatelnost
 
@@ -376,14 +376,11 @@ Je-li $cA$ konečná struktura v konečném jazyce s rovností, potom je teorie 
 
 Důkaz: Očíslujme prvky domény jako $A = {a_1, dots, a_n}$. Teorii $Th(cA)$ (všechny sentence platné v $cA$) lze axiomatizovat jedinou sentencí, která je tvaru "existuje právě $n$ prvků $a_1,dots, a_n$ splňujících právě ty základní vztahy o funkčních hodnotách a relacích, které platí ve struktuře $cA$"
 
-Algoritmus pro rozhodnutí $phi in Th(cA)$:
-```
-Input: sentence φ
-1. Vypiš všechny možné ohodnocení proměnných prvky ze struktury A
-2. Pro každé ohodnocení vyhodnoť φ
-3. Pokud φ platí pro všechna ohodnocení → vrať ANO
-4. Jinak → vrať NE
-```
+Algoritmus pro rozhodnutí $phi in Th(cA)$: Vstup: sentence $phi$
+1. Získej všechna možná ohodnocení proměnných prvky ze struktury $cA$
+2. Pro každé ohodnocení $e$ vyhodnoť $PH^cA (phi)[e]$
+3. Pokud $phi$ platí pro všechna ohodnocení, vrať ANO
+4. Jinak vrať NE
 
 == (P21) Rozhodnutelná a částečně rozhodnutelná teorie
 
@@ -392,5 +389,5 @@ Také nás zajímá, zda můžeme v dané teorii $T$ "algoritmicky rozhodovat pr
 O teorii $T$ říkáme, že je:
 - _rozhodnutelná_, pokud existuje algoritmus, který pro každou vstupní formuli $phi$ doběhne a odpoví, zda $T models phi$
 - _částečně rozhodnutelná_, pokud existuje algoritmus, který pro každou vstupní formuli $phi$
-  - doběhne a odpoví "ano", pokud $T models phi$
-  - buď nedoběhne, nebo odpoví "ne", pokud $T modelsnot phi$
+  - pokud $T models phi$, doběhne a odpoví "ano"
+  - pokud $T modelsnot phi$, buď nedoběhne, nebo odpoví "ne"
