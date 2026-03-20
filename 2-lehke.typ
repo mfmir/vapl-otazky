@@ -145,7 +145,7 @@ _Důkaz:_ Algoritmem ukazujícím částečnou rozhodnutelnost je konstrukce sys
 
 Je-li $T$ kompletní, víme, že platí právě jedna z následujících možností: buď $T models phi$, nebo $T models not phi$. Budeme tedy paralelně konstruovat tablo pro T$phi$ a pro F$phi$; jedna z konstrukcí po konečně mnoha krocích skončí.
 
-== (L14) Teorie konečné struktury v končném jazyce s rovností je rozhodnutelná
+== (L14) Teorie konečné struktury v konečném jazyce s rovností je rozhodnutelná
 
 Je-li $cA$ konečná struktura v konečném jazyce s rovností, potom je teorie $Th(cA)$ rekurzivně axiomatizovaná.
 
