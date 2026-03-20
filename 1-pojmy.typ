@@ -156,7 +156,7 @@ ohodnocení odpovídají modelům $(0, 1, 0, 1, 0)$ a $(0, 0, 0, 1, 0)$.
 
 == (P9) Rezoluční pravidlo, (nejobecnější) unifikace, rezoluční důkaz a zamítnutí.
 
-_Rezoluční pravidlo:_ Mějme klauzule $C_1, C_2$ a literál $cl$ takový, že $cl in C_1 "a" cln in C_2$. Potom _rezolventa_ klauzulí $C_1 "a" C_2$ přes literál $cl$ je: $ C = (C_1 \\ {cl}) union (C_1 \\ {cln}) $
+_Rezoluční pravidlo:_ Mějme klauzule $C_1, C_2$ a literál $cl$ takový, že $cl in C_1 "a" cln in C_2$. Potom _rezolventa_ klauzulí $C_1 "a" C_2$ přes literál $cl$ je: $ C = (C_1 \\ {cl}) union (C_2 \\ {cln}) $
 
 Pokud $cV models C_1$ a $cV models C_2$, tak $cV models C$, tedy rezoluční pravidlo je užitečné (zachovává splnitelnost).
 
