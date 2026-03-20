@@ -324,7 +324,7 @@ Například v teorii grup můžeme zavést _binární_ funkční symbol $minus_b
 
 == (P17) Prenexní normální forma, Skolemova varianta
 
-_Prenexní normální forma_ je "vytknutí kvantifikátorů", formule $phi$ je _PNF_, je-li tvaru $ (Q_1 x_1)dots(Q_n x_n)phi' $ kde $Q_i$ je kvantifikátor a formule $phi'$ je otevřená. $phi'$ pak říkáme _otevřené jádro_ a $(Q_1 x_1)dots(Q_n x_n)$ je _kvantifikátorový prefix_. Jsou-li všechny kvantifikátory v PNF formuli univerzální, je pak $phi$ _univerzální formule_.
+_Prenexní normální forma_ je "vytknutí kvantifikátorů", formule $phi$ je v _PNF_, je-li tvaru $ (Q_1 x_1)dots(Q_n x_n)phi' $ kde $Q_i$ je kvantifikátor a formule $phi'$ je otevřená. $phi'$ pak říkáme _otevřené jádro_ a $(Q_1 x_1)dots(Q_n x_n)$ je _kvantifikátorový prefix_. Jsou-li všechny kvantifikátory v PNF formuli univerzální, je pak $phi$ _univerzální formule_.
 
 Mějme $L$-sentenci $phi$ v PNF, a nechť všechny její vázané proměnné jsou různé. Nechť existenční kvantifikátory v prefixu $phi$ jsou $(exists y_1),dots,(exists y_n)$ v tomto pořadí, a nechť pro každé $i$ jsou $(forall x_1),dots,(forall x_n_i)$ právě všechny univerzální kvantifikátory předcházející kvantifikátoru $(exists y_i)$ v prefixu $phi$. Označme $L'$ rozšíření $L$ o nové $n_i$-ární funkční symboly $f_1,...,f_n$, kde symbol $f_i$ je arity $n_i$ pro každé $i$. _Skolemova varianta_ sentence $phi$ je $L'$-sentence $phi_S$ vzniklá z $phi$ tak, že pro každé $i= 1, ...,n$:
 - odstraníme z prefixu kvantifikátor $(exists y_i)$
