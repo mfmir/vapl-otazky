@@ -292,7 +292,7 @@ Jinak řečeno, vybereme nějakou podmnožinu B univerza A, vytvoříme z ní st
 
 Mějme $cA = struct$ a neprázdnou množinu $X subs A$. Označme B jako nejmenší podmnožinu A, která obsahuje X a je uzavřená na všechny funkce struktury $cA$. Potom o podstruktuře $cA harpoon.tr B$ říkáme, že je _generovaná_ množinou $X$ a značíme ji $cA sl X sr$.
 
-Mějme jazyky $L subs L'$, $L$-strukturu $cA$ a $L'$-strukturu $cA'$ na stejné doméně $A = A'$. Jestliže je interpretace každého symbolu z $L$ (relačního, funkčního, konstantního) stejná (relace, funkce, konstanta) v $cA$ i v $cA'$ potom říkáme, že struktura $cA'$ je _expanzí_ struktury $cA$ do jazyka $L'$ ($L'$-expanzí) a že $A$ je _reduktem_ struktury $cA'$ na jazyk $L$ ($L$-reduktem).
+Mějme jazyky $L subs L'$, $L$-strukturu $cA$ a $L'$-strukturu $cA'$ na stejné doméně $A = A'$. Jestliže je interpretace každého symbolu z $L$ (relačního, funkčního, konstantního) stejná (relace, funkce, konstanta) v $cA$ i v $cA'$ potom říkáme, že struktura $cA'$ je _expanzí_ struktury $cA$ do jazyka $L'$ ($L'$-expanzí) a že struktura $cA$ je _reduktem_ struktury $cA'$ na jazyk $L$ ($L$-reduktem).
 
 == (P15) Definovatelnost ve struktuře
 
