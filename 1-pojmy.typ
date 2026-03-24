@@ -160,7 +160,7 @@ _Rezoluční pravidlo:_ Mějme klauzule $C_1, C_2$ a literál $cl$ takový, že 
 
 Pokud $cV models C_1$ a $cV models C_2$, tak $cV models C$, tedy rezoluční pravidlo je užitečné (zachovává splnitelnost).
 
-_Rezoluční důkaz_ je konečná posloupnost klauzulí $C_0, C_1, dots, C_N = C$ taková, že pro každé $i$ buď $C_i in S$, nebo $C_i$ je rezolventou nějakých $C_j, C_k "kde" j,k < i$. Pokud rezoluční důkaz exituje, říkáme, že $C$ je _rezolucí dokazatelná_ z $S$, píšeme $S scripts(tack)_R C$. _Rezoluční zamítnutí_ CNF formule $S$ je rezoluční důkaz $square "z" S$, v tom případě je $S$ _rezolucí zamítnutelná_.
+_Rezoluční důkaz_ je konečná posloupnost klauzulí $C_0, C_1, dots, C_N = C$ taková, že pro každé $i$ buď $C_i in S$, nebo $C_i$ je rezolventou nějakých $C_j, C_k "kde" j,k < i$. Pokud rezoluční důkaz existuje, říkáme, že $C$ je _rezolucí dokazatelná_ z $S$, píšeme $S scripts(tack)_R C$. _Rezoluční zamítnutí_ CNF formule $S$ je rezoluční důkaz $square "z" S$, v tom případě je $S$ _rezolucí zamítnutelná_.
 
 V predikátové logice, _substituce_ je konečná množina $sigma = {x_1 \/t_1, dots, x_n \/t_n}$, kde $x_i$ jsou navzájem různé proměnné a $t_i$ jsou termy (viz P11), přičemž vyžadujeme, aby $t_i$ nebyl roven proměnné $x_i$. Substituce je
 - _základní_, pokud jsou všechny termy $t_i$ konstantní
@@ -182,7 +182,7 @@ _Signatura_ je dvojice $sl cR, cF sr$, kde $cR, cF$ jsou disjunktní množiny sy
 
 _Struktura_ v signatuře $sig$ je trojice $cA = sl A, cR^cA, cF^cA sr$, kde:
 - $A$ je neprázdná množina, _doména_, _univerzum_
-- $cR^cA = {R^cA | R in cR}$ kde $R^cA subs A^(ar(R))$ je je _interpretace_ relačního symbolu $R$
+- $cR^cA = {R^cA | R in cR}$ kde $R^cA subs A^(ar(R))$ je _interpretace_ relačního symbolu $R$
 - $cF^cA = {f^cA | f in cF}$ kde $f^cA: A^ar(f) arrow A$ je interpretace funkčního symbolu $f$ (speciální pro konstantní symbol $c in cF$ máme $c^cA in A$)
 
 Tady se střetávají symboly a významy, kupříkladu: symbol $+$ je binární funkce s aritou 2. Ve struktuře $sl NN, +^NN sr$ je $+^NN$ běžné sčítání: $+^NN (2,3)$ je rovno 5. Kdežto ve struktuře $sl ZZ_5, +^(ZZ_5) sr$ by to bylo sčítání modulo pěti: $+^(ZZ_5)(3,4)$ je rovno 2.
