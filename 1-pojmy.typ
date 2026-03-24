@@ -353,7 +353,7 @@ Za jakých okolností lze 'popsat' (axiomatizovat) třídu modelů respektive te
 Mějme třídu struktur $K subs M_L$ v nějakém jazyce $L$. $K$ je:
 - _Axiomatizovatelná_, pokud existuje $L$-teorie $T$ taková, že $M_L (T) = K$
 - _Konečně axiomatizovatelná_, pokud je axiomatizovatelná konečnou teorií
-- _Otevřeně axiomatizovatelná_, pokud je axiomatizovatelná otevřenou teorií (otevřená teorie je teorie co používá jen existenční kvantifikátory)
+- _Otevřeně axiomatizovatelná_, pokud je axiomatizovatelná otevřenou teorií (otevřená teorie je teorie, jejíž všechny axiomy jsou otevřené formule. Formule je otevřená, neobsahuje-li žádný kvantifikátor)
 
 // todo: fix links
 Např. tělesa jsou konečně, ale ne otevřeně axiomatizovatelná (potřebujeme univerzální požadavek na existenci inverzního prvku). Dále pak teorie konečných grafů není axiomatizovatelná (viz L7).
